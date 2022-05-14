@@ -17,6 +17,8 @@ build a car:
 build hello-world:
     stage: compile
     script:
+        - apt update
+        - apt install maven
         - mvn clean install package
 test the car:
     stage: test
