@@ -1,5 +1,6 @@
 stages:
     - build
+    - compile
     - test
 build a car:
     stage: build
@@ -13,6 +14,10 @@ build a car:
     artifacts:
         paths:
             - build/
+build hello-world:
+    stage: compile
+    script:
+        - mvn clean install package
 test the car:
     stage: test
     script:
