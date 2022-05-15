@@ -7,8 +7,6 @@ build hello-world:
     image: maven:3.8.5-openjdk-8
     script:
         - mvn clean install package
-        - find / -name webapp.war -print 2>/dev/null >err
-        - cat err
     artifacts:
         paths:
             - /builds
@@ -20,7 +18,9 @@ build docker images:
         - docker:stable-dind
     script:
         - echo "Docker build"
-        - ls -alrh /builds
+        - cp /builds/hmeftah/hello-world/webapp/target/webapp.war . 
+        - docker build -t webapp-afip . 
+
 
       
 
