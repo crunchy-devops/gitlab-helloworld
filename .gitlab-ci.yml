@@ -6,3 +6,7 @@ build hello-world:
     image: maven:3.8.5-openjdk-8
     script:
         - mvn clean install package
+    artifacts:
+        paths:
+            - /build
+
