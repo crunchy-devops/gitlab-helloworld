@@ -12,7 +12,7 @@ build hello-world:
         - mvn clean install package
     artifacts:
         paths:
-            - /builds
+            - ./builds
 
 build docker images:
     stage: docker_build
@@ -22,6 +22,6 @@ build docker images:
     script:
         - echo "Docker build"
         - ls -alrh
-        - cp /builds/hmeftah/hello-world/webapp/target/webapp/webapp.war . 
+        - cp ./builds/hmeftah/hello-world/webapp/target/webapp/webapp.war . 
         - docker build -t webapp-afip .
 
