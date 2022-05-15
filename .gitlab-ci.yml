@@ -1,5 +1,6 @@
 stages:
     - compile
+    - docker_build
 
 image:
     name: maven:3.8.5-openjdk-8
@@ -16,4 +17,13 @@ build hello-world:
     artifacts:
         paths:
             - /builds
+
+build docker images:
+    stage: docker_build
+    image: docker:stable
+    service: docker:stable-dind
+    script:
+        - echo "Docker build"
+        - cp /builds/hmeftah/webapp.war . 
+        - docker build -t webapp-afip .
 
