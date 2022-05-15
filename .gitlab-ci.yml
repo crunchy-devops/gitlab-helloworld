@@ -5,6 +5,7 @@ image:
     name: maven:3.8.5-openjdk-8
 
 before_script:
+    - apt update
     - apt install -y ansible
     - ansible --version
 
