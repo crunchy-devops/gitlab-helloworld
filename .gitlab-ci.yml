@@ -24,6 +24,6 @@ build docker images:
     service: docker:stable-dind
     script:
         - echo "Docker build"
-        - cp /builds/hmeftah/webapp.war . 
+        - cp /builds/hmeftah/hello-world/webapp/target/webapp/webapp.war . 
         - docker build -t webapp-afip .
 
