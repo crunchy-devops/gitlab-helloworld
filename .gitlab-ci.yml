@@ -2,17 +2,13 @@ stages:
     - compile
     - docker_build
 
-image:
-    name: maven:3.8.5-openjdk-8
-
-before_script:
-    - apt update
-    - apt install -y ansible
-    - ansible --version
-
 build hello-world:
     stage: compile
+    image: maven:3.8.5-openjdk-8
     script:
+        - apt update
+        - apt install -y ansible
+        - ansible --version
         - mvn clean install package
     artifacts:
         paths:
