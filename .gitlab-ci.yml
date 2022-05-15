@@ -10,9 +10,10 @@ build hello-world:
         - apt install -y ansible
         - ansible --version
         - mvn clean install package
+        - ls -alrt 
     artifacts:
         paths:
-            - builds
+            - ./builds
 
 build docker images:
     stage: docker_build
@@ -21,7 +22,7 @@ build docker images:
         - docker:stable-dind
     script:
         - echo "Docker build"
-        - ls -alrh  builds
+        - ls -alrh  ./builds
 
       
 
