@@ -19,7 +19,7 @@ build docker images:
     script:
         - echo "Docker build"
         - cp /builds/hmeftah/hello-world/webapp/target/webapp.war . 
-        - docker build -t webapp-afip . 
+        - docker version
 
 
       
