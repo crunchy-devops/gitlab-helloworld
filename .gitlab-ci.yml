@@ -21,7 +21,7 @@ build docker images:
         - docker:stable-dind
     script:
         - echo "Docker build"
-        - ls -alrh ./build
+        - ls -alrh ./builds
 
       
 
