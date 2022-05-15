@@ -8,5 +8,5 @@ build hello-world:
         - mvn clean install package
     artifacts:
         paths:
-            - /build
+            - /builds
 
