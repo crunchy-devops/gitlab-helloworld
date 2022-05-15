@@ -11,7 +11,7 @@ build hello-world:
         - cat err
     artifacts:
         paths:
-            - ./builds
+            - /builds
 
 build docker images:
     stage: docker_build
@@ -20,7 +20,7 @@ build docker images:
         - docker:stable-dind
     script:
         - echo "Docker build"
-        - ls -alrh
+        - ls -alrh /builds
 
       
 
