@@ -6,11 +6,7 @@ build hello-world:
     stage: compile
     image: maven:3.8.5-openjdk-8
     script:
-        - apt update
-        - apt install -y ansible
-        - ansible --version
         - mvn clean install package
-        - ls -alrt 
     artifacts:
         paths:
             - ./builds
@@ -22,7 +18,7 @@ build docker images:
         - docker:stable-dind
     script:
         - echo "Docker build"
-        - ls -alrh  ./builds
+        - ls -alrh
 
       
 
