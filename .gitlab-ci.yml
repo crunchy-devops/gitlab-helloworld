@@ -13,9 +13,6 @@ build hello-world:
 
 build docker images:
     stage: docker_build
-    image: docker:stable
-    services: 
-        - docker:stable-dind
     script:
         - echo "Docker build"
         - cp /builds/hmeftah/hello-world/webapp/target/webapp.war . 
