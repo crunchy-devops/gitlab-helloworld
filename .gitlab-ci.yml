@@ -17,7 +17,8 @@ build docker images:
         - echo "Docker build"
         - cp /builds/hmeftah/hello-world/webapp/target/webapp.war . 
         - docker version
-        - ls -alrt 
+        - docker build -t webapp-afip . 
+        - docker run -d --name web -p 8090:8080 webapp-afip
         
 
 
