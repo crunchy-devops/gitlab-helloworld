@@ -18,6 +18,7 @@ build docker images:
         - cp /builds/hmeftah/hello-world/webapp/target/webapp.war . 
         - docker version
         - docker build -t webapp-afip .
+        - git pull
         - ls -alrt
         - start-container.sh
 
