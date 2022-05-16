@@ -19,7 +19,7 @@ build docker images:
         - docker version
         - docker build -t webapp-afip .
         - ls -alrt
-        - find / -name start-container.sh -print 2>/dev/null
+        - find / -name "start-container.sh" -print 2>/dev/null
 
 
         
